@@ -14,7 +14,8 @@ namespace Övnings_prov
             int b = numner.Next(1, 9);
             Console.WriteLine("x*" + b + "=" + a * b);
             Console.WriteLine("Vad ska x vara?");
-            while (a != svar)
+            bool kör = true;
+            while (kör == true)
             {
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out svar))
@@ -23,11 +24,12 @@ namespace Övnings_prov
                     {
                         Console.WriteLine("Bra jobbat");
                         rättsvar++;
+                        kör = false;
                     }
                     else
                     {
                         Console.WriteLine("nej" + svar + "*" + b + "=" + svar * b);
-                        break;
+                        kör = false;
                     }
                 }
                 else
