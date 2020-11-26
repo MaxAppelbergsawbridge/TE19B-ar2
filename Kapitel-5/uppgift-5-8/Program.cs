@@ -11,7 +11,7 @@ namespace uppgift_5_8
             string[] ord = mening.Split(' ');
             for (int i = 0; i < ord.Length; i++)
             {
-                Console.Write();
+                Console.Write(ord[i]);
             }
         }
     }
