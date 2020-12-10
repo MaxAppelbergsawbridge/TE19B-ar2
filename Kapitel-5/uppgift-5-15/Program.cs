@@ -9,7 +9,10 @@ namespace uppgift_5_16
             string alfabet = "abdefghijklmnopqrstuvwxyzåäö";
             string[] namn = { "Beth", "Liz", "Winston", "a", "b", "c" };
             for (int i = 0; i < namn[i].Length; i++)
-            { }
+            {
+                string example = namn[i];
+
+            }
         }
     }
 }
