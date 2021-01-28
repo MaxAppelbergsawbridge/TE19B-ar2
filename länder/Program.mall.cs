@@ -9,7 +9,6 @@ namespace Countries
         {
             // Presentera programmet
             System.Console.WriteLine("Det här programmet låter dig söka efter länder i ett csv fil");
-            int i = 0;
             // Fråga användare om en sökterm
             if (File.Exists("countries.csv"))
             {
@@ -17,29 +16,23 @@ namespace Countries
                 string svar = Console.ReadLine();
                 // Sökning fungerar oavsett stora eller små bokstäver se https://krank23.gitbook.io/csharp-ref/grundlaeggande/string-manipulering
                 svar = svar.ToLower();
-                string input = Console.ReadLine();
                 string[] rader = File.ReadAllLines("countries.csv");
                 // Avbryt programloop användaren matat in tomt dvs return
-                while (true)
+
+                // Loopa igenom alla rader
+                foreach (var rad in rader)
                 {
-                    if (input == " ")
+                    // Dela upp raden
+                    string[] data = rad.Split(',');
+                    // Hitta land som innehåller sökterm se https://www.geeksforgeeks.org/c-sharp-string-contains-method/
+                    if (data[2] == svar)
                     {
-                        break;
+                        System.Console.WriteLine(data[1]);
                     }
-                    // Loopa igenom alla rader
-                    foreach (var rad in rader)
-                    {
-                        // Dela upp raden
-                        System.Console.WriteLine(i);
-                        string[] data = rad.Split(',');
-
-                        // Hitta land som innehåller sökterm se https://www.geeksforgeeks.org/c-sharp-string-contains-method/
-                        i++;
-                    }
-
                 }
             }
         }
     }
 }
+
 
