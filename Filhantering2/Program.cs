@@ -12,7 +12,7 @@ namespace Filhantering2
             string[] rader = File.ReadAllLines(filnamn);
             System.Console.WriteLine("vad vill du söka efter?");
             string sök = Console.ReadLine();
-            foreach (var item in collection)
+            foreach (var rad in rader)
             {
                 if (rad.substring(0, 1) == sök)
                 {
