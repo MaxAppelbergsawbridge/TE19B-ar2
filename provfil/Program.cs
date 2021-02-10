@@ -1,17 +1,16 @@
 ﻿using System;
 using System.IO;
 
-namespace Torsdag0402
+namespace provfil
 {
     class Program
     {
         static void Main(string[] args)
         {
             string[] bordsInformation;
-            string filnamn = "centralbord.csv";
-            string tomtBordBeskrivning = "0;Inga gäster;0";
+            string filnamn = "centralbord.txt";
+            string tomtBordBeskrivning = "0;Inga gäster";
             int antalbord = 8;
-            int[] nynota = new int[1];
 
             Console.WriteLine("Detta är Centralrestaurangens bordshanterare");
 
@@ -36,14 +35,13 @@ namespace Torsdag0402
 
             // Programmets huvudloop
             string menyVal = "0";
-            while (menyVal != "5")
+            while (menyVal != "4")
             {
                 Console.WriteLine("Välj ett alternativ");
                 Console.WriteLine("1. Visa alla bord");
                 Console.WriteLine("2. Lägg till/ändra bordsinformation");
                 Console.WriteLine("3. Markera att ett bord är tomt");
-                Console.WriteLine("4.Lägg till nota");
-                Console.WriteLine("5. Avsluta programmet");
+                Console.WriteLine("4. Avsluta programmet");
                 menyVal = Console.ReadLine();
 
                 // Tom rad innan användarens val körs
@@ -67,7 +65,7 @@ namespace Torsdag0402
                             int antalGäster = int.Parse(enskiltBordsinformation[0]);
                             string bordsnamn = enskiltBordsinformation[1];
                             totaltAntalGäster += antalGäster;
-                            Console.WriteLine($"Bord {i + 1} - Namn: {bordsnamn}, antal gäster: {antalGäster} nota:{nynota[i]}");
+                            Console.WriteLine($"Bord {i + 1} - Namn: {bordsnamn}, antal gäster: {antalGäster}");
 
                         }
                         Console.WriteLine($"Totalt antal gäster: {totaltAntalGäster}");
@@ -111,28 +109,8 @@ namespace Torsdag0402
                         File.WriteAllLines(filnamn, bordsInformation);
                         break;
 
-                    //lägg till nota
-                    case "4":
-                        Console.WriteLine("Vilket bordsnummer vill du lägga nota på?");
-                        int bordsnummernota = int.Parse(Console.ReadLine());
-                        if (bordsnummernota <= 0 || bordsnummernota > bordsInformation.Length)
-                        {
-                            Console.WriteLine($"{bordsnummernota} är inte ett giltigt bordsnummer");
-                            break;
-                        }
-                        System.Console.WriteLine("Skriv in hur mycket pengar du vill lägga på bordet");
-                        string svar = Console.ReadLine();
-                        if (!int.TryParse(svar, out nynota[0]))
-                        {
-                            System.Console.WriteLine("skriv ett tal");
-                            break;
-                        }
-                        bordsInformation[bordsnummernota - 1] = string.Join(";", nynota);
-                        // Uppdatera sparfilen
-                        File.WriteAllLines(filnamn, bordsInformation);
-                        break;
                     // Gör ingenting (programmet avslutas)
-                    case "5":
+                    case "4":
                         break;
 
                     default:

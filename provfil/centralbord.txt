@@ -1,4 +1,7 @@
-3;aaaa
+3;aaa
+0;Inga gäster
+0;Inga gäster
+0;Inga gäster
 0;Inga gäster
 0;Inga gäster
 0;Inga gäster
