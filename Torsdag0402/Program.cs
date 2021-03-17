@@ -127,7 +127,8 @@ namespace Torsdag0402
                             System.Console.WriteLine("skriv ett tal");
                             break;
                         }
-                        bordsInformation[bordsnummernota - 1] += string.Join(";", nynota);
+                        bordsInformation[bordsnummernota - 1] += String.Join(";", nynota);
+                        // after
                         // Uppdatera sparfilen
                         File.WriteAllLines(filnamn, bordsInformation);
                         break;
