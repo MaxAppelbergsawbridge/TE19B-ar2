@@ -4,42 +4,31 @@ namespace Uppgift6._18
 {
     class Program
     {
+        static string[] tal = { "tal1", "tal2", "tal3" };
         static void Main(string[] args)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                Fråga();
-                Readint(svar);
-            }
+            System.Console.WriteLine("Vilka tal vill du addera?");
+            Readint();
             Addera();
         }
         static int Addera(int tal1, int tal2, int tal3)
         {
             int svar = tal1 + tal2 + tal3;
-            return svar;
-        }
-        static string Fråga(string tal1, string tal2, string tal3)
-        {
-            string[] tal = { tal1, tal2, tal3 };
-            for (int i = 0; i < 3; i++)
-            {
-                System.Console.WriteLine($"skriv in ett tal[i]");
-                tal[i] = Console.ReadLine();
-                return tal[i];
-            }
+            return summa;
         }
         /// <summary>
-        /// Metod som läser in int på ett säkert sätt.
+        /// Läser in tal på ett säkert sätt
         /// </summary>
-        /// <returns> int</returns>
-        static int Readint(string s)
+        /// <returns> ger tal</returns>
+        static int Readint()
         {
             int svar = 0;
-            while (!int.TryParse(s, out svar))
+            while (!int.TryParse(Console.ReadLine(), out svar))
             {
                 System.Console.WriteLine("inte ett giltig numner");
             }
             return svar;
         }
     }
+}
 }
