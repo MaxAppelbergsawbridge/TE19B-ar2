@@ -28,6 +28,9 @@ namespace exmepel_2
             }
 
         }
+        /// <summary>
+        /// skriver ut meny
+        /// </summary>
         static void meny()
         {
             Console.WriteLine("Välj en alternativ");
@@ -35,6 +38,9 @@ namespace exmepel_2
             System.Console.WriteLine("2.Skriv ut texten omvänt");
             System.Console.WriteLine("3.avsluta");
         }
+        /// <summary>
+        /// skriver ut vertikalt
+        /// </summary>
         static void skrivUtvertikalt()
         {
 

@@ -4,7 +4,7 @@ namespace Uppgift6._4
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)//inte klar
         {
             Console.WriteLine("Hur stor ska rätvinklig triangeln vara?");
             int sidLängd = int.Parse(Console.ReadLine());

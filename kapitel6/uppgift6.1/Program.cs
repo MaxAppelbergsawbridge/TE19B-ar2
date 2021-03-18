@@ -10,6 +10,10 @@ namespace uppgift6._1
             upphöjdTilltvå(2);
             upphöjdTilltvå(10);
         }
+        /// <summary>
+        /// Upphöjer tal till två och skriver ut resultatet
+        /// </summary>
+        /// <param name="tal"></param>
         static void upphöjdTilltvå(int tal)
         {
             int svar = tal * tal;
