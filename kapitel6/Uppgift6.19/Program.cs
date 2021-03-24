@@ -1,19 +1,24 @@
 ﻿using System;
 
-namespace Uppgift6._18
+namespace Uppgift6._19
 {
     class Program
     {
-        static string[] tal = { "tal1", "tal2", "tal3" };
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Vilka tal vill du addera?");
-            System.Console.WriteLine(Addera(Readint(), Readint(), Readint()));
+            System.Console.WriteLine("Jämför två tal");
+            System.Console.WriteLine(störst(Readint(), Readint()));
         }
-        static int Addera(int tal1, int tal2, int tal3)
+        static int störst(int tal1, int tal2)
         {
-            int summa = tal1 + tal2 + tal3;
-            return summa;
+            if (tal1 > tal2)
+            {
+                return tal1;
+            }
+            else
+            {
+                return tal2;
+            }
         }
         /// <summary>
         /// Läser in tal på ett säkert sätt
@@ -30,4 +35,3 @@ namespace Uppgift6._18
         }
     }
 }
-
